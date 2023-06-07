@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [SanityTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="SanityTestingTest(failed)">
+    <classes>
+      <class name="com.pageobject.tests.LogOutPageTest">
+        <methods>
+          <include name="click_On_BurgerMenu"/>
+          <include name="tearDown"/>
+          <include name="verify_LogOut"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.pageobject.tests.LogOutPageTest -->
+    </classes>
+  </test> <!-- SanityTestingTest(failed) -->
+</suite> <!-- Failed suite [SanityTestSuite] -->
