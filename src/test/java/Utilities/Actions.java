@@ -26,7 +26,7 @@ import net.bytebuddy.asm.Advice.Argument;
 
 public class Actions extends BaseClass {
 
-	// Select value from dropdown
+	
 	public static void selectDropdownByValue(WebElement ele,String value) {
 
 		Select select = new Select(ele);
