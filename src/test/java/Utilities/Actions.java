@@ -82,6 +82,8 @@ public class Actions extends BaseClass {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("Argument[0].click()", ele);
 	}
+	
+	//to capture screenshot
 	public static String captureScreenShot(WebDriver driver,String testName) throws IOException
 	{
 		//step1: convert webdriver object to TakesScreenshot interface
