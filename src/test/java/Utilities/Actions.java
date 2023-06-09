@@ -69,7 +69,7 @@ public class Actions extends BaseClass {
 	     }
 	   });
 	}
-	
+	// to check if element is displayed
 	public static boolean isDisplayed(WebElement ele) {
 
 		return ele.isDisplayed();
