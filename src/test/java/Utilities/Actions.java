@@ -26,11 +26,13 @@ import net.bytebuddy.asm.Advice.Argument;
 
 public class Actions extends BaseClass {
 
-	
-	public static void selectDropdownByValue(WebElement ele,String value) {
+
+	// Select val from dropdown
+	public static void selectDropdownByValue(WebElement ele,String val) {
+
 
 		Select select = new Select(ele);
-		select.selectByValue(value);
+		select.selectByValue(val);
 	}
 
 	public static void selectDropdownByIndex(WebElement ele,String index) {
