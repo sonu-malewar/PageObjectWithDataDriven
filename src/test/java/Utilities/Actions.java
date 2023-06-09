@@ -52,39 +52,51 @@ public class Actions extends BaseClass {
 	public static void clickOnElement(WebElement ele,long waitTimeunit) {
 		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(waitTimeunit));
 		wait.until(ExpectedConditions.elementToBeClickable(ele)).click();
-		
-	}
-	
-				
-	 // create fluentWait method
-	// Waiting 30 seconds for an element to be present on the page, checking
-	   // for its presence once every 5 seconds.
-	public static void fluentWait(WebElement ele,long waitTimeunit,Exception e) {
-	   Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
-	       .withTimeout(Duration.ofSeconds(30L))
-	       .pollingEvery(Duration.ofSeconds(5L))
-	       .ignoring(Exception.class);
 
-	   WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
-	     public WebElement apply(WebDriver driver) {
-	       return getDriver().findElement(By.id("foo"));
-	     }
-	   });
+	}
+
+
+	// create fluentWait method
+	// Waiting 30 seconds for an element to be present on the page, checking
+	// for its presence once every 5 seconds.
+	public static void fluentWait(WebElement ele,long waitTimeunit,Exception e) {
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
+				.withTimeout(Duration.ofSeconds(30L))
+				.pollingEvery(Duration.ofSeconds(5L))
+				.ignoring(Exception.class);
+
+		WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+			public WebElement apply(WebDriver driver) {
+				return getDriver().findElement(By.id("foo"));
+			}
+		});
 	}
 	// to check if element is displayed
 	public static boolean isDisplayed(WebElement ele) {
 
 		return ele.isDisplayed();
 	}
-	
+
+	//to check if element is enabled
+	public static boolean isEnabled(WebElement ele) {
+
+		return ele.isEnabled();
+	}
+
+	//to check if element is selected
+	public static boolean isSelected(WebElement ele) {
+
+		return ele.isSelected();
+	}
+
 	// click on element by javascriptExecutor
-	
+
 	public static void javaScriptClick(WebDriver driver,WebElement ele) {
-		
+
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("Argument[0].click()", ele);
 	}
-	
+
 	//to capture screenshot
 	public static String captureScreenShot(WebDriver driver,String testName) throws IOException
 	{
@@ -98,18 +110,18 @@ public class Actions extends BaseClass {
 		String dest = System.getProperty("user.dir") + "//Screenshots//" + testName + ".png";
 
 		//step3: copy image file to destination
-		
+
 		try {
-		FileUtils.copyFile(src, new File(dest));
+			FileUtils.copyFile(src, new File(dest));
 		}catch (Exception e) {
 			e.getMessage();
 		}
-		
+
 		return dest;	
 	}
-	
 
-	
 
-	
+
+
+
 }
